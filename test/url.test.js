@@ -94,7 +94,8 @@ describe('auth routes', () => {
       .get('/api/v1/url')
       .then(res => {
         expect(res.body[0]).toEqual({
-          ...url,
+          urlText: 'Joe',
+          shortUrlText: 'Dog',
           id: expect.any(String)
         });
       });
