@@ -82,12 +82,10 @@ describe('auth routes', () => {
 
   it('can get all urls', async()=> {
     let agentLocal;
-    let url;
 
     await postAUrl()
-      .then(({ result, agent }) => {
+      .then(({ agent }) => {
         agentLocal = agent;
-        url = result;
       });
 
     await agentLocal
