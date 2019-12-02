@@ -5,6 +5,7 @@ const app = require('../lib/app');
 const connect = require('../lib/utils/connect');
 const mongoose = require('mongoose');
 
+
 describe('auth routes', () => {
   beforeAll(() => {
     connect();
@@ -49,14 +50,15 @@ describe('auth routes', () => {
   it('can create a url model with appropriate input', async()=> {
 
     await postAUrl()
-      .then(({ result, url }) => {
+      .then(({ result }) => {
         expect(result).toEqual({
-          ...url,
-          user: expect.any(String),
+          urlText: 'Joe',
+          shortUrlText: 'Dog', 
+          count: 1, 
           id: expect.any(String)
         });
-      });
-  }); 
+      }); 
+  });
 
   it('can get a url by id', async()=> {
     let agentLocal;
@@ -115,7 +117,6 @@ describe('auth routes', () => {
           ...url,
           id: expect.any(String)
         });
-  
       });
   });
 
