@@ -33,7 +33,6 @@ describe('auth routes', () => {
 
     const url = { 
       urlText: 'Joe',
-      shortUrlText: 'Dog', 
       count: 1, 
       user: userId 
     };
@@ -53,7 +52,7 @@ describe('auth routes', () => {
       .then(({ result }) => {
         expect(result).toEqual({
           urlText: 'Joe',
-          shortUrlText: 'Dog', 
+  
           count: 1, 
           id: expect.any(String)
         });
@@ -93,7 +92,6 @@ describe('auth routes', () => {
       .then(res => {
         expect(res.body[0]).toEqual({
           urlText: 'Joe',
-          shortUrlText: 'Dog',
           id: expect.any(String)
         });
       });
