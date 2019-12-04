@@ -74,6 +74,7 @@ describe('auth routes', () => {
       .then(res => {
         expect(res.body).toEqual({
           ...url,
+          hits: [],
           id: expect.any(String),
         });
       });
@@ -92,6 +93,7 @@ describe('auth routes', () => {
       .then(res => {
         expect(res.body[0]).toEqual({
           urlText: 'Joe',
+          count: 1,
           id: expect.any(String)
         });
       });
@@ -111,8 +113,7 @@ describe('auth routes', () => {
       .delete(`/api/v1/url/${url.id}`)
       .then(res => {
         expect(res.body).toEqual({
-          ...url,
-          id: expect.any(String)
+          success: true
         });
       });
   });
