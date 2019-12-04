@@ -45,7 +45,7 @@ describe('auth routes', () => {
           .send({ username: 'test', password: '1234' });
       })
       .then(res => { 
-        expect(res.body.status).toEqual(500);
+        expect(res.error.status).toEqual(500);
       });
   });
 
