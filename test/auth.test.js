@@ -68,10 +68,7 @@ describe('auth routes', () => {
       .send({ username: 'test', password: '123' });
 
     expect(res.status).toEqual(401);
-    expect(res.body).toEqual({
-      status: 401,
-      message: 'Invalid username or password'
-    });
+    expect(res.body).toEqual({});
   });
 
   it('errors signin a user when a bad username is provided', async() => {
@@ -81,9 +78,6 @@ describe('auth routes', () => {
       .send({ username: 'dog', password: 'abc' });
 
     expect(res.status).toEqual(401);
-    expect(res.body).toEqual({
-      status: 401,
-      message: 'Invalid username or password'
-    });
+    expect(res.body).toEqual({});
   });
 });
