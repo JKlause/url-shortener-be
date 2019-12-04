@@ -1,5 +1,5 @@
 {
-  "name": "meme-generator-be",
+  "name": "url-shortener-be",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
